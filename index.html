@@ -5,130 +5,132 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>A&P Logistics | Kerala’s Tech-Driven Global Logistics</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
   <style>
     :root {
       --navy: #232A36;
       --slate: #36506B;
-      --silver: #B2BDC7;
       --kerala-green: #289F6C;
       --accent-blue: #4979B8;
       --white: #fff;
       --mist: #f5f7fb;
       --shadow: 0 4px 21px #232a3634;
-      --radius: 17px;
+      --radius: 16px;
     }
     html { scroll-behavior:smooth;}
-    body { background: var(--mist); color: var(--navy); margin:0; font-family: 'Inter', 'Montserrat', Arial, sans-serif; }
+    body { margin:0; padding:0; color:var(--navy); background:var(--mist); font-family:'Inter',sans-serif; }
     nav {
       display:flex; justify-content:space-between; align-items:center;
-      background:rgba(255,255,255,0.92); box-shadow:var(--shadow); padding:0 40px;
-      height:68px; position:sticky; top:0; z-index:999; backdrop-filter:blur(8px);
+      background:rgba(255,255,255,0.93); padding:0 38px;
+      height:70px; box-shadow:var(--shadow); position:sticky; top:0; z-index:1000;
+      backdrop-filter:blur(7px);
     }
     .brand-logo {
-      font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.4em; letter-spacing:2px;
+      font-family:'Montserrat',sans-serif; font-weight:900; font-size:2em; letter-spacing:2px;
       background:linear-gradient(100deg,var(--kerala-green) 66%,var(--navy));
-      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; 
     }
-    .nav-menu { display:flex; gap:28px; font-weight:700;}
-    .nav-menu a { color:var(--navy); text-decoration:none; position:relative;}
+    .nav-menu { display:flex; gap:28px; font-weight:700; }
+    .nav-menu a { color:var(--navy);text-decoration:none;position:relative;font-family:'Montserrat';}
     .nav-menu a.active,.nav-menu a:hover { color:var(--kerala-green);}
-    .nav-menu a.active::after,.nav-menu a:hover::after { width:100%;}
     .nav-menu a:after {
-      content:'';display:block;width:0;height:2px;background:var(--kerala-green);transition:.2s;width;position:absolute;left:0;bottom:-2px;
-    }
-
+      content:'';display:block;width:0;height:2px;background:var(--kerala-green);
+      transition:width .18s; position:absolute;left:0;bottom:-2px;}
+    .nav-menu a.active:after,.nav-menu a:hover:after {width:100%;}
     /* HERO SECTION */
     .hero-section {
-      position: relative; min-height: 84vh; display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(114deg, #232A36cc 62%, #4979B8ef), url('images/1000380779.jpg') center/cover no-repeat;
+      position:relative; min-height:90vh; display:flex; align-items:center; justify-content:center;
+      color:var(--white); background:linear-gradient(120deg,#232A36f5 72%,#4979B8ee),
+        url('images/1000380778.jpg') center/cover no-repeat;
       overflow:hidden;
     }
     .hero-bg-video {
       position:absolute;left:0;top:0;width:100vw;height:100vh;z-index:0;object-fit:cover;opacity:0.42;pointer-events:none;
     }
-    .hero-content { position:relative; z-index:2; width:100%; display:flex; gap:38px; max-width:1220px; padding:84px 0 70px 0;}
-    .hero-left { flex:2; display:flex; flex-direction:column; gap:24px;}
-    .hero-title { font-family:'Montserrat',sans-serif; font-weight:900; font-size:2.6em; color:var(--kerala-green); margin-bottom:7px;}
-    .hero-lead, .hero-badges { font-size:1.16em; }
-    .hero-badges { display:flex; gap:12px; flex-wrap:wrap;}
-    .badge { background:rgba(255,255,255,0.92); color:var(--navy); padding:5px 18px; border-radius:15px; font-weight:700; }
-    .hero-meta { display:flex; gap:14px; }
-    .meta-stat { background:var(--silver); color:var(--kerala-green); padding:8px 16px; border-radius:8px; font-weight:700;}
-    .hero-cta { display:flex; gap:16px; margin-top:18px;}
+    .hero-row { position:relative; z-index:1; width:100%; display:flex; gap:38px; max-width:1250px; padding:90px 0 64px 0;}
+    .hero-col { flex:2; display:flex; flex-direction:column; gap:28px; }
+    .hero-title { font-family:'Montserrat',sans-serif; font-weight:900; font-size:2.85em;
+      color:var(--kerala-green); line-height:1.1; letter-spacing:1px; }
+    .hero-lead { font-size:1.16em; max-width:600px; color:var(--white);}
+    .hero-badges { display:flex; gap:14px; flex-wrap:wrap; }
+    .badge { background:rgba(255,255,255,0.92); color:var(--navy); border-radius:13px; padding:5px 17px; font-weight:700;}
+    .hero-cta { display:flex; gap:20px; }
     .hero-cta button {
-      background:var(--kerala-green); color:var(--white); border:none; border-radius:30px;
-      font-family:'Montserrat'; font-weight:800; font-size:1.11em; letter-spacing:.7px;
-      padding:14px 38px; box-shadow:var(--shadow); cursor:pointer; transition:background .15s,transform .13s;
+      background:var(--kerala-green); color:var(--white); border:none; border-radius:25px; font-weight:800;
+      padding:14px 40px; font-size:1.07em; font-family:Montserrat; transition:background .15s,transform .14s; box-shadow:0 4px 22px #232a362b;
     }
-    .hero-cta button.secondary { background:var(--navy);}
-    .hero-cta button:hover { background:var(--accent-blue); transform:translateY(-2px) scale(1.06);}
-    .ticker {
-      margin-top:30px; font-weight:700; color:var(--accent-blue); font-size:1.12em;
-      background:var(--white); padding:7px 24px; border-radius:23px; box-shadow:0 1px 9px #4979b816;
+    .hero-cta button.secondary { background:var(--accent-blue);}
+    .hero-cta button:hover { background:var(--white); color:var(--kerala-green); transform:translateY(-3px);}
+    .hero-details {
+      display:flex; margin-top:14px; gap:22px;
     }
-    .hero-right { flex:1.1; display:flex; flex-direction:column; align-items:center;}
-    .hero-image-splash {
-      width:220px; border-radius:19px; margin-top:28px; box-shadow:0 3px 24px #b2bdc73b;
+    .stat-block {
+      background:rgba(255,255,255,0.9); color:var(--kerala-green); border-radius:14px; padding:9px 24px;
+      font-weight:800; font-size:1.1em; box-shadow:0 1px 8px #4979b833;
     }
 
-    section { margin-bottom:56px; scroll-margin-top:74px;}
+    /* Section backgrounds */
     .section-bg {
-      position:relative;
-      background: url('images/1000380607.jpg') center/cover no-repeat;
-      border-radius:var(--radius); box-shadow:0 4px 24px #4979b833;
-      padding:49px 36px; margin-bottom:12px;
-      z-index:1; overflow:hidden;
+      padding:85px 0; position:relative; background:var(--mist);}
+    .section-bg.bg-photo {
+      background:linear-gradient(94deg, #f5f7fbcc 54%, #b2bdc7 120%),
+        url('images/container-2568202.jpg') center/cover no-repeat; }
+    .section-bg.bg-team {
+      background:linear-gradient(90deg, #f5f7fbcc 80%, #b2bdc7 110%),
+        url('images/hamburg-2539953.jpg') center/cover no-repeat;}
+    .section-center {max-width:1200px; margin:auto; position:relative;}
+    .section-header {
+      font-family:'Montserrat'; font-weight:900; font-size:2.18em; color:var(--kerala-green);
+      margin-bottom:20px;
     }
-    /* Section-specific backgrounds */
-    .section-bg.about { background-image: url('container-2568202.jpg'); }
-    .section-bg.solutions { background-image: url('container-2568202.jpg'); }
-    .section-bg.services { background-image: url('container-2568202.jpg'); }
-    .section-bg.reach { background-image: url('container-2568202.jpg'); }
-    .section-bg.contact { background-image: url('container-2568202.jpg'); }
-
-    /* Optional: content background for text legibility. Looks great if images are vibrant. */
-    .section-content {
-      background: rgba(255,255,255,0.85);
-      border-radius: 17px;
-      padding: 36px 30px;
-      box-shadow: 0 2px 12px #b2bdc730;
-      position:relative;
-      z-index:2;
+    /* Vision/Mission Block */
+    .vision-wrap {display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center;}
+    .vision-card {
+      background:rgba(255,255,255,0.94); border-radius:16px; box-shadow:0 3px 22px #232a3622;
+      padding:38px 26px; font-size:1.14em;
     }
-    .section-header { font-family:'Montserrat',sans-serif; font-weight:900; font-size:2.06em; color:var(--navy); }
-   
-    .card-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(285px,1fr)); gap:24px;}
+    .vision-values {font-size:1.09em;padding:8px 0 0 0;color:var(--slate);}
+    .vision-card li {margin-bottom:8px;}
+    .vm-badge {background:var(--accent-blue);color:#fff;border-radius:8px;font-size:.95em;padding:4px 11px;font-weight:800;margin-right:8px;}
+    .global-row {display:grid;grid-template-columns:1.2fr 1.5fr;gap:42px;align-items:center;}
+    .globalmap {width:100%;max-width:420px;border-radius:17px;box-shadow:0 3px 18px #4979b822;}
+    .partner-bar {display:flex;gap:17px;margin-top:17px;flex-wrap:wrap;}
+    .partner-badge {background:var(--white);color:var(--navy);font-weight:700;padding:7px 18px;border-radius:11px;box-shadow:0 1px 9px #b2bdc731;}
+    /* Card grid sections */
+    .card-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:29px;}
     .card {
-      position:relative; border-radius:18px; background:rgba(255,255,255,0.96); box-shadow:0 3px 22px #b2bdc72c; padding:34px 26px; transition:transform .18s,box-shadow .19s;
+      position:relative; border-radius:17px; background:rgba(255,255,255,0.98); box-shadow:0 3px 22px #b2bdc72c;
+      padding:32px 23px; transition:transform .14s,box-shadow .18s;
       overflow:hidden; cursor:pointer;
     }
-    .card:hover { transform:translateY(-7px) scale(1.05); box-shadow:0 11px 40px #36506B55;}
-    .card .icon { width:55px; height:55px; border-radius:8px; background:var(--mist); margin-bottom:16px; display:inline-block; transition:transform .26s;}
-    .card:hover .icon { transform: rotate(8deg) scale(1.13);}
-    .card-title { color:var(--kerala-green); font-weight:900; font-size:1.19em; margin-bottom:7px; }
-    .card-desc { color:var(--navy); font-size:1.03em; }
+    .card:hover { transform:translateY(-6px) scale(1.03); box-shadow:0 8px 36px #36506B55;}
+    .card .icon { width:57px; height:57px; border-radius:9px; background:var(--mist); margin-bottom:17px; display:inline-block; }
+    .card-title { color:var(--navy); font-weight:900; font-size:1.21em; margin-bottom:7px; }
+    .card-desc { color:var(--slate); font-size:1.06em; }
     .extra-info {
-      position:absolute;left:0;right:0;bottom:-45px;opacity:0;background:rgba(40,159,108,0.98);color:#fff;padding:13px 11px;font-weight:700;text-align:center;transition:opacity .33s,bottom .33s;
-      font-size:1em;
-    }
+      position:absolute;left:0;right:0;bottom:-40px;opacity:0;
+      background:rgba(40,159,108,0.96);color:#fff;padding:12px;
+      font-weight:700;text-align:center;transition:opacity .33s,bottom .33s;font-size:.99em;}
     .card:hover .extra-info { opacity:1; bottom:0; }
-    .counter-row { display:flex; gap:35px; margin-top:16px;}
-    .counter { background:var(--silver); color:var(--accent-blue); border-radius:11px; padding:10px 19px; font-size:1.15em; font-weight:900;}
+    .counter-row { display:flex; gap:31px; margin-top:18px;}
+    .counter { background:var(--white); color:var(--accent-blue); border-radius:10px; padding:11px 22px; font-size:1.14em; font-weight:900; }
 
-    .dual-grid { display:grid; grid-template-columns:1.4fr 1fr; gap:40px;}
-    .testimonial-card {background:var(--mist);border-radius:13px;box-shadow:0 2px 7px #2974b828;padding:26px 20px;font-style:italic;transition:box-shadow .17s;}
+    /* Testimonials, clients */
+    .dual-grid {display:grid;grid-template-columns:1.4fr 1fr;gap:46px;}
+    .testimonial-card {background:var(--mist);border-radius:14px;box-shadow:0 2px 7px #2974b828;padding:30px 22px;font-style:italic;transition:box-shadow .17s;}
     .testimonial-card:hover { box-shadow:0 6px 30px #289F6C32;}
     .testimonial-card:before {content:'“';font-size:2.2em;color:var(--kerala-green);}
-    .contact-box { background:var(--white); padding:27px 18px; border-radius:var(--radius); box-shadow:0 2px 12px #b2bdc740;}
+    .contact-box { background:var(--white); padding:26px 15px; border-radius:var(--radius); box-shadow:0 2px 12px #b2bdc740; }
 
-    .contact-form input,.contact-form textarea { width:100%; border-radius:5px; border:1px solid #ccc; margin:7px 0; padding:9px; }
-    .contact-form button { background:var(--kerala-green); color:white; border:none; border-radius:5px; padding:10px 18px; font-weight:700; margin-top:10px;}
+    .contact-form input,.contact-form textarea { width:100%; border-radius:5px; border:1px solid #ccc; margin:6px 0; padding:8px; }
+    .contact-form button { background:var(--kerala-green); color:white; border:none; border-radius:5px; padding:10px 17px; font-weight:700; margin-top:10px;}
 
-    @media (max-width:900px) {
-      .hero-content, .dual-grid, .card-row { flex-direction:column; display:block; gap:22px;}
-      .hero-right { width:100%!important;}
+    @media (max-width:1050px) {
+      .section-center,.hero-row{padding:0 11px;}
+      .vision-wrap,.global-row,.dual-grid{grid-template-columns:1fr;}
+      .hero-row{flex-direction:column;gap:14px;}
     }
-    footer {margin-top:36px;background:var(--navy);color:#fff;text-align:center;padding:22px 0 13px 0;font-size:1.03em;font-family:'Montserrat',sans-serif;}
+    footer {margin-top:36px;background:var(--navy);color:#fff;text-align:center;padding:22px 0 13px 0;font-size:1.07em;font-family:'Montserrat',sans-serif;}
     .footer-logo {height:34px;margin-bottom:9px;}
   </style>
   <script>
@@ -166,183 +168,189 @@
   <nav>
     <div class="brand-logo">A&P Logistics</div>
     <ul class="nav-menu">
-      <li><a href="#about" class="active">About</a></li>
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#vision">Vision</a></li>
       <li><a href="#solutions">Solutions</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#reach">Global</a></li>
-      <li><a href="#track">Track</a></li>
+      <li><a href="#global">Global</a></li>
+      <li><a href="#clients">Clients</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- HERO (with looping port video background) -->
+  <!-- HERO (with video and all info in boxed overlay) -->
   <section class="hero-section" id="hero">
-    <video class="hero-bg-video" autoplay loop muted playsinline src="Portwork time laps.mp4"></video>
-    <div class="hero-content">
-      <div class="hero-left">
-        <div class="hero-title">Kerala’s <span style="color:var(--accent-blue)">Most Dynamic</span><br>Global Logistics Partner</div>
-        <div class="hero-lead">Seamless shipping, live tracking, zero delays,
-        and eco-forward solutions for modern exporters and importers. A future-ready logistics experience born in God's Own Country.</div>
+    <video class="hero-bg-video" autoplay loop muted playsinline src="videos/Portwork-time-laps.mp4"></video>
+    <div class="hero-row">
+      <div class="hero-col">
+        <div class="hero-title">Kerala’s Most Dynamic<br>Global Logistics Partner</div>
+        <div class="hero-lead">
+          Born in God’s Own Country, we power seamless import/export for India and the world—AI-driven, fully transparent, and sustainably crew-first, with a hub in Kerala and reach to every continent.
+        </div>
         <div class="hero-badges">
           <div class="badge">ISO Certified</div>
           <div class="badge">AI-Powered Tracking</div>
           <div class="badge">Zero Downtime</div>
           <div class="badge">Global Compliance</div>
         </div>
-        <div class="hero-meta">
-          <div class="meta-stat">200+ Partners</div>
-          <div class="meta-stat">60+ Countries</div>
-          <div class="meta-stat">99.7% On-Time</div>
+        <div class="hero-details">
+          <div class="stat-block">200+ Partners</div>
+          <div class="stat-block">60+ Countries</div>
+          <div class="stat-block">99.7% On-Time</div>
         </div>
         <div class="hero-cta">
           <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request Quote</button>
-          <button class="secondary" onclick="document.getElementById('track').scrollIntoView({behavior:'smooth'})">Track Shipment</button>
+          <button class="secondary" onclick="document.getElementById('clients').scrollIntoView({behavior:'smooth'})">Clients & Stories</button>
         </div>
-        <div class="ticker">AI-Powered Transparency | Zero Delays | Sustainable & Human-Focused Logistics | Crew Welfare Driven</div>
       </div>
-      <div class="hero-right">
-        <img src="container-4197259.jpg" alt="Container Ship at Dock" class="hero-image-splash">
+      <div class="hero-right" style="flex:1;">
+        <img src="images/container-4197259.jpg" style="width:100%;border-radius:18px;box-shadow:0 7px 31px #289F6C22;" alt="Ship at port">
       </div>
     </div>
   </section>
 
-  <main>
-    <!-- ABOUT - Kerala team, background as warehouse interior -->
-    <section class="section-bg about" id="about">
-      <div class="section-content">
-        <div class="section-header">About Us</div>
-        <div style="display:flex;gap:34px;align-items:center;flex-wrap:wrap;">
-          <div style="flex:1.2;">
-            <p>
-              A&P Logistics solves all modern pain points for global trade from Kerala: erasing delays, unpredictable costs, complex paperwork, and lack of visibility. We fuse AI, automation, and sustainability—clients experience unfailing reliability, eco-forward ethics, and a world-class team every step.
-            </p>
-            <div class="hero-badges" style="margin:18px 0 0 0;">
-              <div class="badge">Certified Experts</div>
-              <div class="badge">Live Dashboards</div>
-              <div class="badge">Award-Winning Team</div>
-            </div>
+  <!-- VISION & MISSION (tight grid, Kerala visual, global tagline) -->
+  <section class="section-bg bg-team" id="vision">
+    <div class="section-center">
+      <div class="section-header">Our Vision & Mission</div>
+      <div class="vision-wrap">
+        <div class="vision-card">
+          <b><span class="vm-badge">VISION</span></b>  
+          To be Asia’s most innovative, trusted & sustainable logistics bridge—erasing delay, doubt, and distance for every exporter and importer from Kerala to the world.
+          <div class="vision-values">
+            We bridge Kerala’s enterprise and the global supply chain through:<br>
+            <ul>
+              <li><span class="vm-badge">Zero Delay</span> AI-driven routing, real-time tracking and full digital transparency</li>
+              <li><span class="vm-badge">True Globalization</span> Serving 60+ nations (GCC, Africa, Europe, Americas, APAC)</li>
+              <li><span class="vm-badge">Sustainability</span> Greenest tech, ethical ops, & crew-first responsibility</li>
+            </ul>
           </div>
-          <div style="flex:1;">
-            <img src="hamburg-2539953.jpg" alt="Team / Kerala warehouse" style="width:100%;border-radius:15px;box-shadow:0 3px 15px #b2bdc72b;">
+        </div>
+        <div class="vision-card">
+          <b><span class="vm-badge" style="background:var(--kerala-green)">MISSION</span></b>
+          <ul>
+            <li>Deliver guaranteed, fully visible, zero-delay delivery—every container, every lane.</li>
+            <li>Empower exporters/importers with compliant, error-free digital customs/documents.</li>
+            <li>Support our team with industry-best working standards, safety, and growth (Kerala pride, global care).</li>
+            <li>Minimize carbon and environmental impact via optimized routes and future-forward green strategy.</li>
+            <li>Ensure pricing is always upfront and transparent—never any hidden fees.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS (modeled on Delhivery, Nan Lian: dense grid, each a full card) -->
+  <section class="section-bg bg-photo" id="solutions">
+    <div class="section-center">
+      <div class="section-header">Our Edge: Solutions to Modern Logistics Pain</div>
+      <div class="card-row">
+        <div class="card">
+          <div class="icon"><img src="images/hamburg-3021820.jpg" width="48"></div>
+          <div class="card-title">Real-Time Digital Tracking</div>
+          <div class="card-desc">Live location, status & milestone alerts across all borders and carriers—backed by AI and cloud dashboards.</div>
+        </div>
+        <div class="card">
+          <div class="icon"><img src="images/container-4203677.jpg" width="48"></div>
+          <div class="card-title">Zero-Delay AI Routing</div>
+          <div class="card-desc">Automated route optimization, instant pressure-mitigation, guaranteed ETA for every leg.</div>
+        </div>
+        <div class="card">
+          <div class="icon"><img src="images/1000380777.jpg" width="48"></div>
+          <div class="card-title">Automated Compliance</div>
+          <div class="card-desc">Fast, error-free customs + regulatory doc automation in every transit country.</div>
+        </div>
+        <div class="card">
+          <div class="icon"><img src="images/1000380761.jpg" width="48"></div>
+          <div class="card-title">Transparent, Predictable Pricing</div>
+          <div class="card-desc">Upfront quoting. Always digital. No surprise billings at any step.</div>
+        </div>
+        <div class="card">
+          <div class="icon"><img src="images/1000380903.jpg" width="48"></div>
+          <div class="card-title">Green & Crew-Centric Operations</div>
+          <div class="card-desc">Industry-best green practices, zero harm ethics, total team support.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES (block grid, no dead space, pro sections) -->
+  <section class="section-bg services bg-photo" id="services">
+    <div class="section-center">
+      <div class="section-header">Our Services</div>
+      <div class="card-row">
+        <div class="card">
+          <div class="icon"><img src="images/1000380611.jpg" width="44"></div>
+          <div class="card-title">Import Operations</div>
+          <div class="card-desc">Door-to-door, document-forward, total safety—fully protected inbound logistics.</div>
+        </div>
+        <div class="card">
+          <div class="icon"><img src="images/1000380610.jpg" width="44"></div>
+          <div class="card-title">Export Solutions</div>
+          <div class="card-desc">Paperless, insured, AI-tracked support on every port outbound—Kerala to the world.</div>
+        </div>
+        <div class="card">
+          <div class="icon"><img src="images/1000380608.jpg" width="44"></div>
+          <div class="card-title">Freight Forwarding</div>
+          <div class="card-desc">Integrated sea, air, & road lanes for max savings, fastest delivery, and guaranteed resilience.</div>
+        </div>
+        <div class="card">
+          <div class="icon"><img src="images/1000380606.jpg" width="44"></div>
+          <div class="card-title">Warehousing/Distribution</div>
+          <div class="card-desc">Climate-controlled, digital, instant inventory fulfillment and world-class safety.</div>
+        </div>
+        <div class="card">
+          <div class="icon"><img src="images/1000380605.jpg" width="44"></div>
+          <div class="card-title">Customs & Compliance</div>
+          <div class="card-desc">24/7 fast support, automated docs, zero paperwork errors at any border.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL (Kerala world map, partner grid, strong numbers, video background) -->
+  <section class="section-bg reach" id="global" style="background:linear-gradient(120deg,#e8ecef 80%,#b2bdc7 120%), url('images/container-2568202.jpg') center/cover no-repeat;">
+    <div class="section-center">
+      <div class="section-header">Worldwide Network</div>
+      <div class="global-row">
+        <div>
+          <video autoplay loop muted playsinline src="videos/Tugs-pushing-large-container-vessel-to-berth.mp4" 
+            style="width:100%;max-width:440px; border-radius:17px; box-shadow:0 4px 20px #b2bdc73c;">
+          </video>
+          <img src="images/1000380906.jpg" style="width:100%;max-width:370px;border-radius:17px;box-shadow:0 3px 18px #289F6C30;margin-top:13px;" alt="Kerala Global Map"/>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:18px;">
+          <div>
+            <b>Kerala Hub • 60+ countries direct • 4 continents • 200+ partners</b><br>
+            Europe, Gulf, Africa, Americas, APAC: resilient links from India’s Southern Gateway.<br>
+          </div>
+          <div class="partner-bar">
+            <span class="partner-badge">GCC</span><span class="partner-badge">Europe</span><span class="partner-badge">Africa</span><span class="partner-badge">S.E. Asia</span><span class="partner-badge">USA</span>
+          </div>
+          <div class="counter-row">
+            <div class="counter" data-suffix="+">60</div>
+            <div class="counter" data-suffix="+">200</div>
+            <div class="counter" data-suffix="%">99</div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SOLUTIONS: Container stacks as bg, key icons -->
-    <section class="section-bg solutions" id="solutions">
-      <div class="section-content">
-        <div class="section-header">Our Edge: Solutions to Real Industry Problems</div>
-        <div class="card-row">
-          <div class="card">
-            <div class="icon"><img src="hamburg-3021820.jpg" width="44"></div>
-            <div class="card-title">Real-time Digital Tracking</div>
-            <div class="card-desc">Always know where your cargo is—instant alerts and milestone updates.</div>
-            <div class="extra-info">24/7 client dashboards</div>
-          </div>
-          <div class="card">
-            <div class="icon"><img src="container-4203677.jpg" width="44"></div>
-            <div class="card-title">Zero-Delay AI Routing</div>
-            <div class="card-desc">AI-powered scheduling and smart reroutes eliminate delay.</div>
-            <div class="extra-info">Guaranteed ETA each leg</div>
-          </div>
-          <div class="card">
-            <div class="icon"><img src="images/1000380777.jpg" width="44"></div>
-            <div class="card-title">Automated Compliance</div>
-            <div class="card-desc">Digitized docs & live regulatory updates—flawless customs clearances.</div>
-            <div class="extra-info">Zero paperwork errors</div>
-          </div>
-          <div class="card">
-            <div class="icon"><img src="images/1000380761.jpg" width="44"></div>
-            <div class="card-title">Transparent Pricing</div>
-            <div class="card-desc">No hidden fees—upfront quoting and digital cost breakdown every order.</div>
-            <div class="extra-info">Live quote calculators</div>
-          </div>
-          <div class="card">
-            <div class="icon"><img src="images/1000380760.jpg" width="44"></div>
-            <div class="card-title">Eco-Logistics & Crew Care</div>
-            <div class="card-desc">Green routes, ethical logistics, total workplace safety.</div>
-            <div class="extra-info">Global ESG compliance</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES - Ships/yard/ops photo background -->
-    <section class="section-bg services" id="services">
-      <div class="section-content">
-        <div class="section-header">Our Services</div>
-        <div class="card-row">
-          <div class="card">
-            <div class="icon"><img src="images/1000380611.jpg" width="44"></div>
-            <div class="card-title">Import Operations</div>
-            <div class="card-desc">Compliance-forward, fully protected, door-to-door imports.</div>
-            <div class="extra-info">Customs digitalization</div>
-          </div>
-          <div class="card">
-            <div class="icon"><img src="images/1000380610.jpg" width="44"></div>
-            <div class="card-title">Export Solutions</div>
-            <div class="card-desc">Full support, from Kerala to world—tracked and insured.</div>
-            <div class="extra-info">Zero damage guarantee</div>
-          </div>
-          <div class="card">
-            <div class="icon"><img src="images/1000380608.jpg" width="44"></div>
-            <div class="card-title">Freight Forwarding</div>
-            <div class="card-desc">Sea, air, and road—tech-powered for speed and savings.</div>
-            <div class="extra-info">AI route optimization</div>
-          </div>
-          <div class="card">
-            <div class="icon"><img src="images/1000380606.jpg" width="44"></div>
-            <div class="card-title">Warehousing</div>
-            <div class="card-desc">Climate-controlled, digitized, and instant distribution.</div>
-            <div class="extra-info">Live inventory</div>
-          </div>
-          <div class="card">
-            <div class="icon"><img src="images/1000380605.jpg" width="44"></div>
-            <div class="card-title">Customs & Compliance</div>
-            <div class="card-desc">Automated docs, fast border clearance, 24hr support.</div>
-            <div class="extra-info">Zero paperwork errors</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GLOBAL REACH with tug video and routes map -->
-    <section class="section-bg reach" id="reach">
-      <div class="section-content">
-        <div class="section-header">Global Presence</div>
-        <video autoplay loop muted playsinline src="videos/Tugs-pushing-large-container-vessel-to-berth.mp4" style="width:100%;max-width:520px; border-radius:14px; box-shadow:0 3px 24px #b2bdc73b; margin-bottom:19px;" poster="images/1000380777.jpg"></video>
-        <div class="counter-row">
-          <div class="counter" data-suffix="+">60</div>
-          <div class="counter" data-suffix="+">200</div>
-          <div class="counter" data-suffix="%">99</div>
-        </div>
-        <div style="margin-top:14px;">
-          <img src="images/1000380779.jpg" alt="Kerala Global Routes Map" style="width:90%;max-width:380px;border-radius:13px;box-shadow:0 3px 15px #b2bdc72b;">
-        </div>
-      </div>
-    </section>
-
-    <!-- TRACKING TOOL -->
-    <section class="section-bg" id="track" style="background-image:url('images/1000380777.jpg');">
-      <div class="section-content">
-        <div class="section-header">Track Your Shipment</div>
-        <form style="display:flex;gap:13px;max-width:542px;margin-top:11px;" onsubmit="alert('Advanced tracking integration coming soon!');return false;">
-          <input type="text" placeholder="Enter Tracking Number..." required style="padding:13px 19px;font-size:1.02em;border:1.5px solid #c1d2d0;border-radius:11px;flex:2;">
-          <button type="submit" style="background:var(--accent-blue);font-family:'Montserrat';font-weight:900;color:white;padding:13px 36px;border:none;border-radius:12px;cursor:pointer;">Track</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS & CONTACT -->
-    <section class="section-bg contact" id="contact">
-      <div class="section-content dual-grid">
+  <!-- CLIENTS/TESTIMONIALS & ESG -->
+  <section class="section-bg bg-photo" id="clients">
+    <div class="section-center">
+      <div class="section-header">Why Exporters, Importers & Partners Trust Us</div>
+      <div class="dual-grid">
         <div>
           <div class="testimonial-card">
-            “A&P’s transparency, innovative dashboard and delivery reliability are miles ahead of the rest.<br><b>— Major Exporter, Kerala</b>”
+            “A&P’s transparency, innovative dashboard, and delivery reliability are miles ahead of the rest.<br><b>— Major Kerala Exporter</b>”
           </div>
           <div class="testimonial-card" style="margin-top:13px;">
             “Crew-first, green operations, and true cost clarity—this is next-gen logistics.<br><b>— Global FMCG Group</b>”
+          </div>
+          <div class="testimonial-card" style="margin-top:13px;background:var(--kerala-green);color:#fff;font-style:normal;">
+            Zero crew injuries in 6 years. Best-in-class green logistics. Proudly compliant with global ESG laws from Kerala—proving business can do good.
           </div>
         </div>
         <div class="contact-box">
@@ -358,12 +366,37 @@
           </form>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION for customers/partners -->
+  <section class="section-bg bg-photo" id="faq" style="padding:64px 0 54px 0;">
+    <div class="section-center">
+      <div class="section-header">Frequently Asked</div>
+      <div class="card-row">
+        <div class="card">
+          <div class="card-title">Are you Kerala-based or international?</div>
+          <div class="card-desc">Both! Our global network is anchored in Kerala, exporting to 60+ countries and partnering with 200+ overseas clients.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">What’s your ESG/green policy?</div>
+          <div class="card-desc">Green route planning, paperless ops, crew safety, and zero-waste goals in every solution, inspired by true industry leaders.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">What technology do you use?</div>
+          <div class="card-desc">Live AI scheduling, predictive tracking, and API-ready digital dashboards—benchmarked to Delhivery/Nan Lian standards.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Can I get a live quote and shipment visibility?</div>
+          <div class="card-desc">Yes—click Track Shipment above for instant updates or contact us for a live, transparent quote.</div>
+        </div>
+      </div>
+    </div>
+  </section>
   <footer>
-    <img src="images/1000380779.jpg" class="footer-logo" alt="A&P Logistics Logo"><br>
-    &copy; 2025 A&P Logistics. Exporters from God’s Own Country.<br>
-    All rights reserved.
+    <img src="images/1000380779.jpg" class="footer-logo" alt="A&P Logistics Logo" style="margin-top:7px;"><br>
+    &copy; 2025 A&P Logistics • Kerala’s Gateway to the World<br>
+    Built on tech, trust, and Kerala heritage.
   </footer>
 </body>
 </html>
