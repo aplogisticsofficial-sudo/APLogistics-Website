@@ -40,11 +40,11 @@
     /* HERO SECTION */
     .hero-section {
       position: relative; min-height: 84vh; display: flex; align-items: center; justify-content: center;
-      background:linear-gradient(114deg, #232A36c8 62%, #4979B8ee), url('1000380762.jpg') center/cover no-repeat;
+      background:linear-gradient(114deg, #232A36cc 62%, #4979B8ef), url('1000380779.jpg') center/cover no-repeat;
       overflow:hidden;
     }
-    .hero-section video.hero-bg-video {
-      position:absolute;left:0;top:0;width:100%;height:100%;z-index:0;object-fit:cover;opacity:0.44;pointer-events:none;
+    .hero-bg-video {
+      position:absolute;left:0;top:0;width:100vw;height:100vh;z-index:0;object-fit:cover;opacity:0.38;pointer-events:none;
     }
     .hero-content { position:relative; z-index:2; width:100%; display:flex; gap:38px; max-width:1220px; padding:84px 0 70px 0;}
     .hero-left { flex:2; display:flex; flex-direction:column; gap:24px;}
@@ -66,36 +66,39 @@
       margin-top:30px; font-weight:700; color:var(--accent-blue); font-size:1.12em;
       background:var(--white); padding:7px 24px; border-radius:23px; box-shadow:0 1px 9px #4979b816;
     }
-    
+    .hero-right { flex:1.1; display:flex; flex-direction:column; align-items:center;}
+    .hero-image-splash {
+      width:220px; border-radius:19px; margin-top:28px; box-shadow:0 3px 24px #b2bdc73b;
+    }
 
     /* SECTIONS WITH IMAGE BACKGROUNDS */
     section { margin-bottom:56px; scroll-margin-top:74px;}
     .section-bg {
       position:relative;
       background: linear-gradient(90deg,#fffffff6 90%,#b2bdc7e0 110%),
-        url('Tugs pushing large container vessel to berth.mp4') top center/cover no-repeat;
+        url('1000380611.jpg') top center/cover no-repeat;
       border-radius:var(--radius); box-shadow:0 4px 24px #4979b833; padding:49px 36px; margin-bottom:12px;
       z-index:1; overflow:hidden;
     }
-    .section-bg.solutions { background-image:linear-gradient(90deg,#fffffff6 85%,#b2bdc7e0 110%), url('1000380778.jpg'); } /* Port containers for Solutions */
-    .section-bg.services { background-image:linear-gradient(90deg,#fffffff6 83%,#b2bdc7e0 110%), url('1000380611.jpg'); } /* Ship/warehouse for Services */
-    .section-bg.reach { background-image:linear-gradient(90deg,#fffffff6 80%,#b2bdc7e0 120%), url('1000380608.jpg'); } /* Ship at sea for Global/Reach */
+    /* Section-specific backgrounds */
+    .section-bg.about { background-image:linear-gradient(90deg,#fffffff6 92%,#b2bdc7e0 120%), url('1000380607.jpg'); }
+    .section-bg.solutions { background-image:linear-gradient(90deg,#fffffff6 85%,#b2bdc7e0 120%), url('1000380778.jpg'); }
+    .section-bg.services { background-image:linear-gradient(90deg,#fffffff6 83%,#b2bdc7e0 110%), url('1000380612.jpg'); }
+    .section-bg.reach { background-image:linear-gradient(90deg,#fffffff6 80%,#b2bdc7e0 120%), url('1000380777.jpg'); }
     .section-bg.contact { background-image:linear-gradient(90deg,#fffffff6 88%,#b2bdc7e0 110%), url('1000380760.jpg'); }
 
     .section-bg::before {
       content:""; position:absolute; top:0; left:0; width:100%; height:100%;
-      background: inherit; filter: blur(7px) brightness(0.80) grayscale(0.08);
-      opacity:0.25; z-index:0;
+      background: inherit; filter: blur(9px) brightness(0.82) grayscale(0.10);
+      opacity:0.33; z-index:0;
     }
     .section-content { position:relative; z-index:2; }
     .section-header { font-family:'Montserrat',sans-serif; font-weight:900; font-size:2.06em; color:var(--navy); }
    
-    /* Card Grid */
     .card-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(285px,1fr)); gap:24px;}
     .card {
       position:relative; border-radius:18px; background:rgba(255,255,255,0.96); box-shadow:0 3px 22px #b2bdc72c; padding:34px 26px; transition:transform .18s,box-shadow .19s;
-      overflow:hidden;
-      cursor:pointer;
+      overflow:hidden; cursor:pointer;
     }
     .card:hover { transform:translateY(-7px) scale(1.05); box-shadow:0 11px 40px #36506B55;}
     .card .icon { width:55px; height:55px; border-radius:8px; background:var(--mist); margin-bottom:16px; display:inline-block; transition:transform .26s;}
@@ -122,7 +125,7 @@
 
     @media (max-width:900px) {
       .hero-content, .dual-grid, .card-row { flex-direction:column; display:block; gap:22px;}
-      .hero-right,.propeller,.hero-img { width:100%!important;}
+      .hero-right { width:100%!important;}
     }
     footer {margin-top:36px;background:var(--navy);color:#fff;text-align:center;padding:22px 0 13px 0;font-size:1.03em;font-family:'Montserrat',sans-serif;}
     .footer-logo {height:34px;margin-bottom:9px;}
@@ -171,9 +174,8 @@
     </ul>
   </nav>
 
-  <!-- HERO (with video background and animated propeller/ship) -->
+  <!-- HERO (with looping port video background) -->
   <section class="hero-section" id="hero">
-    <!-- Port yard video for maximum impact. You can use either -->
     <video class="hero-bg-video" autoplay loop muted playsinline src="Portwork time laps.mp4"></video>
     <div class="hero-content">
       <div class="hero-left">
@@ -198,21 +200,15 @@
         <div class="ticker">AI-Powered Transparency | Zero Delays | Sustainable & Human-Focused Logistics | Crew Welfare Driven</div>
       </div>
       <div class="hero-right">
-        <div class="propeller">
-          <!-- Port tug propeller image as animated icon -->
-          <img src="1000380777.jpg" width="78" height="78" alt="Spinning Propeller">
-        </div>
-        <div style="margin-top:22px;">
-          <!-- Animated tug pushing ship as hero illustration -->
-          <img src="1000380778.jpg" width="120" alt="Animated ship graphic">
-        </div>
+        <!-- Branding/ship image for visual splash -->
+        <img src="1000380778.jpg" alt="Container Ship at Dock" class="hero-image-splash">
       </div>
     </div>
   </section>
 
   <main>
-    <!-- ABOUT section with Kerala nature/team image background -->
-    <section class="section-bg" id="about" style="background-image:linear-gradient(90deg,#fffffff6 90%,#b2bdc7e0 110%), url('1000380779.jpg');">
+    <!-- ABOUT - Kerala team, background as warehouse interior -->
+    <section class="section-bg about" id="about">
       <div class="section-content">
         <div class="section-header">About Us</div>
         <div style="display:flex;gap:34px;align-items:center;flex-wrap:wrap;">
@@ -227,13 +223,13 @@
             </div>
           </div>
           <div style="flex:1;">
-            <img src="1000380607.jpg" alt="Team / Kerala background" style="width:100%;border-radius:15px;box-shadow:0 3px 15px #b2bdc72b;">
+            <img src="1000380607.jpg" alt="Team / Kerala warehouse" style="width:100%;border-radius:15px;box-shadow:0 3px 15px #b2bdc72b;">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SOLUTIONS -->
+    <!-- SOLUTIONS: Container stacks as bg, key icons -->
     <section class="section-bg solutions" id="solutions">
       <div class="section-content">
         <div class="section-header">Our Edge: Solutions to Real Industry Problems</div>
@@ -245,13 +241,13 @@
             <div class="extra-info">24/7 client dashboards</div>
           </div>
           <div class="card">
-            <div class="icon"><img src="1000380755.jpg" width="44"></div>
+            <div class="icon"><img src="1000380779.jpg" width="44"></div>
             <div class="card-title">Zero-Delay AI Routing</div>
             <div class="card-desc">AI-powered scheduling and smart reroutes eliminate delay.</div>
             <div class="extra-info">Guaranteed ETA each leg</div>
           </div>
           <div class="card">
-            <div class="icon"><img src="1000380754.jpg" width="44"></div>
+            <div class="icon"><img src="1000380777.jpg" width="44"></div>
             <div class="card-title">Automated Compliance</div>
             <div class="card-desc">Digitized docs & live regulatory updates—flawless customs clearances.</div>
             <div class="extra-info">Zero paperwork errors</div>
@@ -263,7 +259,7 @@
             <div class="extra-info">Live quote calculators</div>
           </div>
           <div class="card">
-            <div class="icon"><img src="1000380777.jpg" width="44"></div>
+            <div class="icon"><img src="1000380760.jpg" width="44"></div>
             <div class="card-title">Eco-Logistics & Crew Care</div>
             <div class="card-desc">Green routes, ethical logistics, total workplace safety.</div>
             <div class="extra-info">Global ESG compliance</div>
@@ -272,7 +268,7 @@
       </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- SERVICES - Ships/yard/ops photo background -->
     <section class="section-bg services" id="services">
       <div class="section-content">
         <div class="section-header">Our Services</div>
@@ -311,11 +307,11 @@
       </div>
     </section>
 
-    <!-- GLOBAL REACH: video background + animated counters / mapping -->
+    <!-- GLOBAL REACH with tug video and routes map -->
     <section class="section-bg reach" id="reach">
       <div class="section-content">
         <div class="section-header">Global Presence</div>
-        <video autoplay loop muted playsinline src="Tugs pushing large container vessel to berth.mp4" style="width:100%;max-width:520px; border-radius:14px; box-shadow:0 3px 24px #b2bdc73b; margin-bottom:19px;" poster="1000380778.jpg"></video>
+        <video autoplay loop muted playsinline src="Tugs pushing large container vessel to berth.mp4" style="width:100%;max-width:520px; border-radius:14px; box-shadow:0 3px 24px #b2bdc73b; margin-bottom:19px;" poster="1000380777.jpg"></video>
         <div class="counter-row">
           <div class="counter" data-suffix="+">60</div>
           <div class="counter" data-suffix="+">200</div>
@@ -327,7 +323,7 @@
       </div>
     </section>
 
-    <!-- TRACKING TOOL -->
+    <!-- TRACKING TOOL - cargo closeup containers -->
     <section class="section-bg" id="track" style="background-image:linear-gradient(90deg,#fffffff6 90%,#b2bdc7e0 110%), url('1000380777.jpg');">
       <div class="section-content">
         <div class="section-header">Track Your Shipment</div>
