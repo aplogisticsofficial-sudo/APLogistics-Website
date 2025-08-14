@@ -40,18 +40,18 @@
     /* HERO SECTION */
     .hero-section {
       position: relative; min-height: 84vh; display: flex; align-items: center; justify-content: center;
-      background:linear-gradient(114deg, #232A36cc 62%, #4979B8ef), url('1000380779.jpg') center/cover no-repeat;
+      background: linear-gradient(114deg, #232A36cc 62%, #4979B8ef), url('images/1000380779.jpg') center/cover no-repeat;
       overflow:hidden;
     }
     .hero-bg-video {
-      position:absolute;left:0;top:0;width:100vw;height:100vh;z-index:0;object-fit:cover;opacity:0.38;pointer-events:none;
+      position:absolute;left:0;top:0;width:100vw;height:100vh;z-index:0;object-fit:cover;opacity:0.42;pointer-events:none;
     }
     .hero-content { position:relative; z-index:2; width:100%; display:flex; gap:38px; max-width:1220px; padding:84px 0 70px 0;}
     .hero-left { flex:2; display:flex; flex-direction:column; gap:24px;}
     .hero-title { font-family:'Montserrat',sans-serif; font-weight:900; font-size:2.6em; color:var(--kerala-green); margin-bottom:7px;}
     .hero-lead, .hero-badges { font-size:1.16em; }
     .hero-badges { display:flex; gap:12px; flex-wrap:wrap;}
-    .badge { background:rgba(255,255,255,0.94); color:var(--navy); padding:5px 18px; border-radius:15px; font-weight:700; }
+    .badge { background:rgba(255,255,255,0.92); color:var(--navy); padding:5px 18px; border-radius:15px; font-weight:700; }
     .hero-meta { display:flex; gap:14px; }
     .meta-stat { background:var(--silver); color:var(--kerala-green); padding:8px 16px; border-radius:8px; font-weight:700;}
     .hero-cta { display:flex; gap:16px; margin-top:18px;}
@@ -71,28 +71,30 @@
       width:220px; border-radius:19px; margin-top:28px; box-shadow:0 3px 24px #b2bdc73b;
     }
 
-    /* SECTIONS WITH IMAGE BACKGROUNDS */
     section { margin-bottom:56px; scroll-margin-top:74px;}
     .section-bg {
       position:relative;
-      background: linear-gradient(90deg,#fffffff6 90%,#b2bdc7e0 110%),
-        url('1000380611.jpg') top center/cover no-repeat;
-      border-radius:var(--radius); box-shadow:0 4px 24px #4979b833; padding:49px 36px; margin-bottom:12px;
+      background: url('images/1000380607.jpg') center/cover no-repeat;
+      border-radius:var(--radius); box-shadow:0 4px 24px #4979b833;
+      padding:49px 36px; margin-bottom:12px;
       z-index:1; overflow:hidden;
     }
     /* Section-specific backgrounds */
-    .section-bg.about { background-image:linear-gradient(90deg,#fffffff6 92%,#b2bdc7e0 120%), url('container-2568202.jpg'); }
-    .section-bg.solutions { background-image:linear-gradient(90deg,#fffffff6 85%,#b2bdc7e0 120%), url('container-4197259.jpg'); }
-    .section-bg.services { background-image:linear-gradient(90deg,#fffffff6 83%,#b2bdc7e0 110%), url('container-4203677.jpg'); }
-    .section-bg.reach { background-image:linear-gradient(90deg,#fffffff6 80%,#b2bdc7e0 120%), url('container-ship-6631117.jpg'); }
-    .section-bg.contact { background-image:linear-gradient(90deg,#fffffff6 88%,#b2bdc7e0 110%), url('hamburg-2539953.jpg'); }
+    .section-bg.about { background-image: url('images/1000380607.jpg'); }
+    .section-bg.solutions { background-image: url('images/1000380778.jpg'); }
+    .section-bg.services { background-image: url('images/1000380612.jpg'); }
+    .section-bg.reach { background-image: url('images/1000380777.jpg'); }
+    .section-bg.contact { background-image: url('images/1000380760.jpg'); }
 
-    .section-bg::before {
-      content:""; position:absolute; top:0; left:0; width:100%; height:100%;
-      background: inherit; filter: blur(9px) brightness(0.82) grayscale(0.10);
-      opacity:0.33; z-index:0;
+    /* Optional: content background for text legibility. Looks great if images are vibrant. */
+    .section-content {
+      background: rgba(255,255,255,0.85);
+      border-radius: 17px;
+      padding: 36px 30px;
+      box-shadow: 0 2px 12px #b2bdc730;
+      position:relative;
+      z-index:2;
     }
-    .section-content { position:relative; z-index:2; }
     .section-header { font-family:'Montserrat',sans-serif; font-weight:900; font-size:2.06em; color:var(--navy); }
    
     .card-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(285px,1fr)); gap:24px;}
@@ -113,7 +115,6 @@
     .counter-row { display:flex; gap:35px; margin-top:16px;}
     .counter { background:var(--silver); color:var(--accent-blue); border-radius:11px; padding:10px 19px; font-size:1.15em; font-weight:900;}
 
-    /* Testimonial and contact block */
     .dual-grid { display:grid; grid-template-columns:1.4fr 1fr; gap:40px;}
     .testimonial-card {background:var(--mist);border-radius:13px;box-shadow:0 2px 7px #2974b828;padding:26px 20px;font-style:italic;transition:box-shadow .17s;}
     .testimonial-card:hover { box-shadow:0 6px 30px #289F6C32;}
@@ -176,7 +177,7 @@
 
   <!-- HERO (with looping port video background) -->
   <section class="hero-section" id="hero">
-    <video class="hero-bg-video" autoplay loop muted playsinline src="Portwork time laps.mp4"></video>
+    <video class="hero-bg-video" autoplay loop muted playsinline src="videos/Portwork-time-laps.mp4"></video>
     <div class="hero-content">
       <div class="hero-left">
         <div class="hero-title">Kerala’s <span style="color:var(--accent-blue)">Most Dynamic</span><br>Global Logistics Partner</div>
@@ -200,8 +201,7 @@
         <div class="ticker">AI-Powered Transparency | Zero Delays | Sustainable & Human-Focused Logistics | Crew Welfare Driven</div>
       </div>
       <div class="hero-right">
-        <!-- Branding/ship image for visual splash -->
-        <img src="1000380778.jpg" alt="Container Ship at Dock" class="hero-image-splash">
+        <img src="images/1000380778.jpg" alt="Container Ship at Dock" class="hero-image-splash">
       </div>
     </div>
   </section>
@@ -223,7 +223,7 @@
             </div>
           </div>
           <div style="flex:1;">
-            <img src="1000380607.jpg" alt="Team / Kerala warehouse" style="width:100%;border-radius:15px;box-shadow:0 3px 15px #b2bdc72b;">
+            <img src="images/1000380607.jpg" alt="Team / Kerala warehouse" style="width:100%;border-radius:15px;box-shadow:0 3px 15px #b2bdc72b;">
           </div>
         </div>
       </div>
@@ -235,31 +235,31 @@
         <div class="section-header">Our Edge: Solutions to Real Industry Problems</div>
         <div class="card-row">
           <div class="card">
-            <div class="icon"><img src="1000380612.jpg" width="44"></div>
+            <div class="icon"><img src="images/1000380612.jpg" width="44"></div>
             <div class="card-title">Real-time Digital Tracking</div>
             <div class="card-desc">Always know where your cargo is—instant alerts and milestone updates.</div>
             <div class="extra-info">24/7 client dashboards</div>
           </div>
           <div class="card">
-            <div class="icon"><img src="1000380779.jpg" width="44"></div>
+            <div class="icon"><img src="images/1000380779.jpg" width="44"></div>
             <div class="card-title">Zero-Delay AI Routing</div>
             <div class="card-desc">AI-powered scheduling and smart reroutes eliminate delay.</div>
             <div class="extra-info">Guaranteed ETA each leg</div>
           </div>
           <div class="card">
-            <div class="icon"><img src="1000380777.jpg" width="44"></div>
+            <div class="icon"><img src="images/1000380777.jpg" width="44"></div>
             <div class="card-title">Automated Compliance</div>
             <div class="card-desc">Digitized docs & live regulatory updates—flawless customs clearances.</div>
             <div class="extra-info">Zero paperwork errors</div>
           </div>
           <div class="card">
-            <div class="icon"><img src="1000380761.jpg" width="44"></div>
+            <div class="icon"><img src="images/1000380761.jpg" width="44"></div>
             <div class="card-title">Transparent Pricing</div>
             <div class="card-desc">No hidden fees—upfront quoting and digital cost breakdown every order.</div>
             <div class="extra-info">Live quote calculators</div>
           </div>
           <div class="card">
-            <div class="icon"><img src="1000380760.jpg" width="44"></div>
+            <div class="icon"><img src="images/1000380760.jpg" width="44"></div>
             <div class="card-title">Eco-Logistics & Crew Care</div>
             <div class="card-desc">Green routes, ethical logistics, total workplace safety.</div>
             <div class="extra-info">Global ESG compliance</div>
@@ -274,31 +274,31 @@
         <div class="section-header">Our Services</div>
         <div class="card-row">
           <div class="card">
-            <div class="icon"><img src="1000380611.jpg" width="44"></div>
+            <div class="icon"><img src="images/1000380611.jpg" width="44"></div>
             <div class="card-title">Import Operations</div>
             <div class="card-desc">Compliance-forward, fully protected, door-to-door imports.</div>
             <div class="extra-info">Customs digitalization</div>
           </div>
           <div class="card">
-            <div class="icon"><img src="1000380610.jpg" width="44"></div>
+            <div class="icon"><img src="images/1000380610.jpg" width="44"></div>
             <div class="card-title">Export Solutions</div>
             <div class="card-desc">Full support, from Kerala to world—tracked and insured.</div>
             <div class="extra-info">Zero damage guarantee</div>
           </div>
           <div class="card">
-            <div class="icon"><img src="1000380608.jpg" width="44"></div>
+            <div class="icon"><img src="images/1000380608.jpg" width="44"></div>
             <div class="card-title">Freight Forwarding</div>
             <div class="card-desc">Sea, air, and road—tech-powered for speed and savings.</div>
             <div class="extra-info">AI route optimization</div>
           </div>
           <div class="card">
-            <div class="icon"><img src="1000380606.jpg" width="44"></div>
+            <div class="icon"><img src="images/1000380606.jpg" width="44"></div>
             <div class="card-title">Warehousing</div>
             <div class="card-desc">Climate-controlled, digitized, and instant distribution.</div>
             <div class="extra-info">Live inventory</div>
           </div>
           <div class="card">
-            <div class="icon"><img src="1000380605.jpg" width="44"></div>
+            <div class="icon"><img src="images/1000380605.jpg" width="44"></div>
             <div class="card-title">Customs & Compliance</div>
             <div class="card-desc">Automated docs, fast border clearance, 24hr support.</div>
             <div class="extra-info">Zero paperwork errors</div>
@@ -311,20 +311,20 @@
     <section class="section-bg reach" id="reach">
       <div class="section-content">
         <div class="section-header">Global Presence</div>
-        <video autoplay loop muted playsinline src="Tugs pushing large container vessel to berth.mp4" style="width:100%;max-width:520px; border-radius:14px; box-shadow:0 3px 24px #b2bdc73b; margin-bottom:19px;" poster="1000380777.jpg"></video>
+        <video autoplay loop muted playsinline src="videos/Tugs-pushing-large-container-vessel-to-berth.mp4" style="width:100%;max-width:520px; border-radius:14px; box-shadow:0 3px 24px #b2bdc73b; margin-bottom:19px;" poster="images/1000380777.jpg"></video>
         <div class="counter-row">
           <div class="counter" data-suffix="+">60</div>
           <div class="counter" data-suffix="+">200</div>
           <div class="counter" data-suffix="%">99</div>
         </div>
         <div style="margin-top:14px;">
-          <img src="1000380779.jpg" alt="Kerala Global Routes Map" style="width:90%;max-width:380px;border-radius:13px;box-shadow:0 3px 15px #b2bdc72b;">
+          <img src="images/1000380779.jpg" alt="Kerala Global Routes Map" style="width:90%;max-width:380px;border-radius:13px;box-shadow:0 3px 15px #b2bdc72b;">
         </div>
       </div>
     </section>
 
-    <!-- TRACKING TOOL - cargo closeup containers -->
-    <section class="section-bg" id="track" style="background-image:linear-gradient(90deg,#fffffff6 90%,#b2bdc7e0 110%), url('1000380777.jpg');">
+    <!-- TRACKING TOOL -->
+    <section class="section-bg" id="track" style="background-image:url('images/1000380777.jpg');">
       <div class="section-content">
         <div class="section-header">Track Your Shipment</div>
         <form style="display:flex;gap:13px;max-width:542px;margin-top:11px;" onsubmit="alert('Advanced tracking integration coming soon!');return false;">
@@ -361,7 +361,7 @@
     </section>
   </main>
   <footer>
-    <img src="1000380779.jpg" class="footer-logo" alt="A&P Logistics Logo"><br>
+    <img src="images/1000380779.jpg" class="footer-logo" alt="A&P Logistics Logo"><br>
     &copy; 2025 A&P Logistics. Exporters from God’s Own Country.<br>
     All rights reserved.
   </footer>
